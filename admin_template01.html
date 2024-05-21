@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>krt - Admin</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./resources/css/common.css" type="text/css" />
+    <link rel="stylesheet" href="./resources/css/page.css" type="text/css" />
+    <script src="./resources/js/common.js"></script>
+</head>
+<body>
+
+<div class="wrap">
+    <div class="wrap-header">
+        <div class="header-info">
+            <h1 class="logo"><a href="#">여행이지</a></h1>
+        </div>
+        <div class="header-func">
+            <span class="login-time">Login time<em>09:20</em></span>
+        </div>
+    </div>
+    <div class="wrap-inner">
+        <div class="lnb">
+            <button class="nav-toggle" onclick="onToggleLnb()">open/close</button>
+            <div class="lnb-header">
+                <div class="lnb-user-info">
+                    <div class="user-name">
+                        <span class="icon"></span>
+                        <span class="name">Admin</span>
+                    </div>
+                    <!--<a href="#" class="user-setting">계정설정</a>-->
+                </div><!-- //user-area -->
+            </div><!-- //lnb-header -->
+            <div class="lnb-body">
+                <div class="lnb-body__scroll">
+                    <nav class="lnb-nav">
+                        <ul class="depth1">
+                            <li>
+                                <a href="#" class="name">Guide</a>
+                                <ul class="depth2">
+                                    <li><a href="./index.html">Template List</a></li>
+                                    <li><a href="admin_guide.html">Guide List</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="name">메뉴 1-2</a>
+                                <ul class="depth2">
+                                    <li><a href="#">서브 1-2-1</a></li>
+                                    <li><a href="#">서브 1-2-2</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="name">메뉴 1-3</a>
+                                <ul class="depth2">
+                                    <li><a href="#">서브 1-3-1</a></li>
+                                    <li><a href="#">서브 1-3-2</a></li>
+                                    <li><a href="#">서브 1-3-3</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav><!-- //lnb -->
+                </div>
+            </div><!-- //lnb-body -->
+            <div class="lnb-footer">
+                <nav class="lnb-nav">
+                    <ul class="depth1">
+                        <li class="none-children">
+                            <a href="#"><i class="icon icon-lnb-logout"></i>로그아웃</a>
+                        </li>
+                    </ul>
+                </nav><!-- //lnb -->
+                <p class="copyright">COPYRIGHT ©<br>2022. All rights reserve.</p>
+            </div><!-- //lnb-footer -->
+        </div><!-- //lnb -->
+        <div class="contents">
+            <div class="contents-wrap">
+                <div class="contents-body">
+                    <h2 class="title-2 contents-title">Title - Table List</h2>
+
+                    <!-- filter -->
+                    <div class="filter-option">
+                        <div class="filter-col">
+                            <div class="label-box">상태</div>
+                            <div class="inp-box">
+                                <label class="checkbox">
+                                    <input type="checkbox" checked>
+                                    <span class="label">옵션1</span>
+                                </label><!-- //checkbox -->
+                                <label class="checkbox">
+                                    <input type="checkbox" checked>
+                                    <span class="label">옵션2</span>
+                                </label><!-- //checkbox -->
+                                <label class="checkbox">
+                                    <input type="checkbox" checked>
+                                    <span class="label">옵션3</span>
+                                </label><!-- //checkbox -->
+                                <label class="checkbox">
+                                    <input type="checkbox" checked>
+                                    <span class="label">옵션4</span>
+                                </label><!-- //checkbox -->
+                            </div>
+                        </div>
+                        <div class="filter-col">
+                            <div class="label-box">검색</div>
+                            <div class="inp-box size--full">
+                                <select class="select type--max" style="width:160px">
+                                    <option>이름</option>
+                                </select>
+                                <input type="text" class="input size--full" placeholder="placeholder">
+                            </div>
+                            <button class="btn-type-2"><i class="icon"><img src="./resources/img/icon_search.svg" alt=""></i>검색</button>
+                        </div>
+
+                    </div><!-- // filter-option -->
+
+                    <div class="panel-article">
+                        <div class="form-header">
+                            <div class="form-header__l">
+                                <span>전체 : 100</span>
+                            </div>
+                            <div class="form-header__r">
+                                <button class="btn-type-2"><i class="icon"><img src="./resources/img/icon_add.svg" alt=""></i>추가</button>
+                                <button class="btn-type-2"><i class="icon"><img src="./resources/img/icon_delete.svg" alt=""></i>삭제</button>
+                                <button class="btn-type-2 color--btn-1"><i class="icon"><img src="./resources/img/icon_check_white.svg" alt=""></i>저장</button>
+                            </div>
+                        </div><!-- //form-header -->
+                        <div class="form-table">
+                            <table class="table-type-1">
+                                <colgroup>
+                                    <col width="10%">
+                                    <col width="20%">
+                                    <col width="20%">
+                                    <col width="*">
+                                    <col width="20%">
+                                </colgroup>
+                                <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>신청일시</th>
+                                    <th>이름</th>
+                                    <th>이메일</th>
+                                    <th>전화번호</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>109</td>
+                                    <td>홍길동</td>
+                                    <td>2021-04-12</td>
+                                    <td>abse@naver.com</td>
+                                    <td>010-9999-0000</td>
+                                </tr>
+                                <tr>
+                                    <td>109</td>
+                                    <td>홍길동</td>
+                                    <td>2021-04-12</td>
+                                    <td>abse@naver.com</td>
+                                    <td>010-9999-0000</td>
+                                </tr>
+                                <tr>
+                                    <td>109</td>
+                                    <td>홍길동</td>
+                                    <td>2021-04-12</td>
+                                    <td>abse@naver.com</td>
+                                    <td>010-9999-0000</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="paging">
+                            <div class="paging__first-prev">
+                                <a href="#" class="first disabled">First</a>
+                                <a href="#" class="prev">Prev</a>
+                            </div>
+                            <div class="paging__num">
+                                <a href="#" class="selected">1</a>
+                                <a href="#">2</a>
+                                <a href="#">3</a>
+                                <a href="#">4</a>
+                                <a href="#">5</a>
+                            </div>
+                            <div class="paging__next-last">
+                                <a href="#" class="next">Next</a>
+                                <a href="#" class="last disabled">Last</a>
+                            </div>
+                        </div><!-- //paging -->
+                    </div><!-- // panel-article -->
+
+                    <div class="panel-article" style="display:none">
+                        <div class="form-header">
+                            <div class="form-header__l">
+                                <span>전체 : 100</span>
+                            </div>
+                            <div class="form-header__r">
+                                <button class="btn-type-2"><i class="icon"><img src="./resources/img/icon_add.svg" alt=""></i>추가</button>
+                                <button class="btn-type-2"><i class="icon"><img src="./resources/img/icon_delete.svg" alt=""></i>삭제</button>
+                                <button class="btn-type-2 color--btn-1"><i class="icon"><img src="./resources/img/icon_check_white.svg" alt=""></i>저장</button>
+                            </div>
+                        </div><!-- //form-header -->
+                        <div style="height:400px; background:#efefef; display:flex; align-items: center; justify-content: center">Grid Table</div>
+                        <div class="paging">
+                            <div class="paging__first-prev">
+                                <a href="#" class="first disabled">First</a>
+                                <a href="#" class="prev">Prev</a>
+                            </div>
+                            <div class="paging__num">
+                                <a href="#" class="selected">1</a>
+                                <a href="#">2</a>
+                                <a href="#">3</a>
+                                <a href="#">4</a>
+                                <a href="#">5</a>
+                            </div>
+                            <div class="paging__next-last">
+                                <a href="#" class="next">Next</a>
+                                <a href="#" class="last disabled">Last</a>
+                            </div>
+                        </div><!-- //paging -->
+                    </div><!-- // panel-article -->
+
+                </div><!-- //contents-body -->
+            </div><!-- //contents-wrap -->
+        </div><!-- //contents -->
+    </div>
+    <!-- //container -->
+</div><!-- //wrap -->
+
+</body>
+</html>
