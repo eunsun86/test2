@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>plf</title>
+		<script src="../static/js/jquery-3.6.0.min.js"></script>
+		<script src="../static/js/datepicker.min.js"></script>		
+		<script src="../static/js/datepicker.ko-KR.js"></script>		
+		<script src="../static/js/plf_pub.js"></script>
+		<link rel="stylesheet" href="../static/css/plf.css" />
+
+		<link rel="stylesheet" href="../static/css/ibsheet8_main.css" />
+		<link rel="stylesheet" href="../static/css/ibsheet_custom.css" />
+
+		<!-- ibsheet css -->
+		<!-- <link rel="stylesheet" href="https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/css/default/main.css"/> -->
+		<!-- <link rel="stylesheet" href="https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/css/compatible/light/main.css"/> -->
+
+		<!--  ibsheet 필수 js -->
+		<script src="../static/js/ibsheet/ibleaders.js"></script>
+		<script src="../static/js/ibsheet/ibsheet.js"></script>
+		<script src="../static/js/ibsheet/locale/ko.js"></script>
+
+		<!--  ibsheet 선택/추가 js -->
+		<script src="../static/js/ibsheet/plugins/ibsheet-common.js"></script>
+		<script src="../static/js/ibsheet/plugins/ibsheet-dialog.js"></script>
+		<script src="../static/js/ibsheet/plugins/ibsheet-excel.js"></script>		
+
+		<style>
+			td.changeBtnColor u{
+				background-color: red;
+			}
+		</style>
+
+	</head>
+	<body>
+
+		<!--[S] plf-root-->
+		<div class="plf-root p15">
+
+			<!--[S] plf-main-->
+			<div class="plf-main">
+
+				<div id='sheetDiv' style='width:100%;height:100%'></div>
+			
+				<script>
+					var ib = ib||{};
+					ib = {
+					//시트 초기화 구문
+					'init':{
+						//공통기능 설정 부분
+						"Cfg": {
+							"SearchMode": 2,
+							"HeaderMerge": 3,
+							"MessageWidth": 300,
+							"Style": "GIL"
+						},
+						//중앙(메인) 컬럼 설정
+						"Cols": [
+							/*1열*/ {
+								"Header": "버튼",
+								"Type": "Button",
+								"Name": "btn",
+								"Width": 100,
+								"Align": "Left",
+								"CanEdit": 1,
+								"Button": "Button"
+							},
+							/*2열*/ {
+								"Header": "라디오",
+								"Type": "Radio",
+								"Name": "RadioData",
+								"Width": 300,
+								"Align": "Center",
+								"CanEdit": 1,
+								"Enum": "|상상상|중중중|하하하",
+								"EnumKeys": "|H:1|M:1|L:1"
+							},
+							/*3열*/ {
+								"Header": "체크박스",
+								"Type": "Bool",
+								"Name": "CheckData2",
+								"Width": 200,
+								"Align": "Center",
+								"CanEdit": 1
+							},														
+							/*4열*/ {
+								"Header": {"Value": "","HeaderCheck": 1, "IconAlign": "Center"},
+								"Type": "Bool",
+								"Name": "CheckData",
+								"Width": 50,
+								"Align": "Center",
+								"CanEdit": 1
+							},								
+							/*5열*/ {
+								"Header": "셀렉트",
+								"Type": "Enum",
+								"Name": "sel",
+								"Width": 100,
+								"Align": "Center",
+								"CanEdit": 1,
+								"RawSort": 1,
+								"Enum": "|셀렉트1|셀렉트2|셀렉트3",
+								"EnumKeys": "|01A|02A|03A"
+							},								
+						]
+					},
+					//시트 이벤트
+					'event':{
+							onRenderFirstFinish: function(evtParam) {
+								evtParam.sheet.loadSearchData(loadData);
+							}
+					},
+					//시트객체 생성
+					'create':function (){
+							var options = this.init;
+
+							options.Events = this.event;
+							IBSheet.create({
+								id: 'sheet', // 생성할 시트의 id
+								el: 'sheetDiv', // 시트를 생성할 Dom 객체 및 id
+								options: options // 생성될 시트의 속성
+							});
+						},
+					}
+					ib.create();
+
+					var loadData = [
+					/*1행*/	
+					{
+						"btn":"벤자민버튼",
+						"RadioData":"H:1",
+						"CheckData":1,
+						"CheckData2":1,
+						"sel": "01A"
+					},
+					/*2행*/
+					{
+						"btn":"벤자민버튼",
+						"RadioData":"H:1",
+						"CheckData":1,
+						"CheckData2":1,
+						"sel": "02A"
+					},
+					/*3행*/
+					{
+						"btn":"벤자민버튼",
+						"RadioData":"H:1",
+						"CheckData":1,
+						"CheckData2":1,
+						"sel": "02A"
+					},
+					/*4행*/
+					{
+						"btn":"벤자민버튼",
+						"RadioData":"H:1",
+						"CheckData":1,
+						"CheckData2":1,
+						"sel": "02A"
+					}																			
+					]
+				</script>
+
+			</div>
+			<!--//[S] plf-main-->
+
+		</div>
+		<!--//[S] plf-root-->
+
+	</body>	
+</html>
